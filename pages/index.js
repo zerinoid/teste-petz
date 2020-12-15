@@ -1,3 +1,4 @@
+import Head from "next/head"
 import Link from "next/link"
 
 export async function getStaticProps() {
@@ -14,7 +15,10 @@ export async function getStaticProps() {
 export default function HomePage({ posts }) {
     return (
         <div>
-            <h1>Welcome to Next.js!</h1>
+            <Head>
+                <title>Petz</title>
+            </Head>
+            <h1>Petz</h1>
             <ul>
                 {posts.slice(0, 10).map((post, index) => (
                     <li key={index}>
