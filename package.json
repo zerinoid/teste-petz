@@ -1,0 +1,11 @@
+{
+  "name": "petz-teste",
+  "version": "1.0.0",
+  "description": "Teste para dev front do Petz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leonardo Zerino",
+  "license": "ISC"
+}
