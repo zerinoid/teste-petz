@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export async function getStaticProps() {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts")
     const posts = await res.json()
@@ -15,7 +17,11 @@ export default function HomePage({ posts }) {
             <h1>Welcome to Next.js!</h1>
             <ul>
                 {posts.slice(0, 10).map((post, index) => (
-                    <li key={index}>{post.title}</li>
+                    <li key={index}>
+                        <Link href={`/posts/${post.id}`}>
+                            <a>{post.title}</a>
+                        </Link>
+                    </li>
                 ))}
             </ul>
         </div>
