@@ -13,8 +13,9 @@ export async function getStaticProps() {
     }
 }
 
-function apagarRegistro(id) {
-    fetch(`https://jsonplaceholder.typicode.com/posts?post=${id}`, {
+async function apagarRegistro(id) {
+    await console.log(id)
+    await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
         method: "DELETE"
     })
 }
