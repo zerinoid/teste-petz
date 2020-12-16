@@ -1,6 +1,7 @@
 import Head from "next/head"
 import Link from "next/link"
 import Layout from "../components/layout"
+import { useState, useEffect } from "react"
 
 export async function getStaticProps() {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts")
@@ -12,6 +13,10 @@ export async function getStaticProps() {
         }
     }
 }
+
+const [render, setRender] = useState({
+    render: false
+})
 
 async function apagarRegistro(id) {
     await console.log(id)
