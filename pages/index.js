@@ -13,6 +13,12 @@ export async function getStaticProps() {
     }
 }
 
+function apagarRegistro(id) {
+    fetch(`https://jsonplaceholder.typicode.com/posts?post=${id}`, {
+        method: "DELETE"
+    })
+}
+
 export default function HomePage({ posts }) {
     return (
         <Layout home>
@@ -33,7 +39,9 @@ export default function HomePage({ posts }) {
                             {/* <small className={utilStyles.lightText}> */}
                             {/*   <Date dateString={date} /> */}
                             {/* </small> */}
-                            <button>Apagar</button>
+                            <button onClick={() => apagarRegistro(post.id)}>
+                                Apagar
+                            </button>
                         </li>
                     ))}
                 </ul>
