@@ -5,7 +5,7 @@ export default function Layout({ children, home }) {
     return (
         <div>
             <Head>
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/icon.png" />
                 <meta name="description" content="Teste petz" />
             </Head>
             <header>
