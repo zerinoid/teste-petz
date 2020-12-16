@@ -16,6 +16,7 @@ export default function Layout({ children, home }) {
                         {/*     className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`} */}
                         {/*     alt={name} */}
                         {/* /> */}
+                        imagem aqui
                         <h1>Petz</h1>
                     </>
                 ) : (
@@ -27,7 +28,7 @@ export default function Layout({ children, home }) {
                                 {/*     className={`${styles.headerImage} ${utilStyles.borderCircle}`} */}
                                 {/*     alt={name} */}
                                 {/* /> */}
-                                derp
+                                imagem aqui
                             </a>
                         </Link>
                         <h2>
