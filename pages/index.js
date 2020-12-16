@@ -33,6 +33,7 @@ export default function HomePage({ posts }) {
                             {/* <small className={utilStyles.lightText}> */}
                             {/*   <Date dateString={date} /> */}
                             {/* </small> */}
+                            <button>Apagar</button>
                         </li>
                     ))}
                 </ul>
