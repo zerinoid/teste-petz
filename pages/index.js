@@ -43,7 +43,10 @@ export default function HomePage({ posts }) {
                     {list
                         .slice(0, 10)
                         .filter(
-                            post => input === "" || post.title.includes(input)
+                            post =>
+                                input === "" ||
+                                post.title.includes(input) ||
+                                post.id == input
                         )
                         .map((post, index) => (
                             <li key={index}>
