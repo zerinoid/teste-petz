@@ -2,7 +2,7 @@ import Head from "next/head"
 import Link from "next/link"
 import { useState } from "react"
 import Layout from "../components/layout"
-import utilStyles from "../styles/utils.module.css"
+import utilStyles from "../styles/utils.module.scss"
 
 export async function getStaticProps() {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts")

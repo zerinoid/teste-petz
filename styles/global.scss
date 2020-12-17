@@ -1,3 +1,5 @@
+@import "variables";
+
 html,
 body {
     padding: 0;
@@ -6,6 +8,7 @@ body {
         Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     line-height: 1.6;
     font-size: 18px;
+    background-color: $secondary;
 }
 
 * {
@@ -13,7 +16,7 @@ body {
 }
 
 a {
-    color: #0070f3;
+    color: $primary;
     text-decoration: none;
 }
 

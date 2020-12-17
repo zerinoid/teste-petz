@@ -1,3 +1,5 @@
+@import "variables";
+
 .headingXl {
     font-size: 2rem;
     line-height: 1.3;
@@ -26,5 +28,5 @@
 }
 
 .lightText {
-    color: #999;
+    color: $text3;
 }
