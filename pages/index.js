@@ -36,8 +36,11 @@ export default function HomePage({ posts }) {
                 <ul>
                     {list.slice(0, 10).map((post, index) => (
                         <li key={index}>
+                            {post.title}
                             <Link href={`/posts/${post.id}`}>
-                                <a>{post.title}</a>
+                                <a>
+                                    <button>ver</button>
+                                </a>
                             </Link>
                             {/* <br /> */}
                             {/* <small className={utilStyles.lightText}> */}
