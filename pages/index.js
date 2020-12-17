@@ -35,7 +35,7 @@ export default function HomePage({ posts }) {
                 <title>Petz</title>
             </Head>
             <section>
-                <p> etc etc etc</p>
+                <p>Procure por título ou por conteúdo do post:</p>
             </section>
             <section>
                 <input type="text" value={input} onChange={onChangeHandler} />
