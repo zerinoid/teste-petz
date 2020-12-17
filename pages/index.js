@@ -16,12 +16,17 @@ export async function getStaticProps() {
 
 export default function HomePage({ posts }) {
     const [list, setList] = useState(posts)
+    const [input, setInput] = useState("")
 
     function apagarRegistro(id) {
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
             method: "DELETE"
         })
         setList(list.filter(item => item.id !== id))
+    }
+
+    function onChangeHandler(e) {
+        setInput(e.target.value)
     }
 
     return (
@@ -33,24 +38,30 @@ export default function HomePage({ posts }) {
                 <p> etc etc etc</p>
             </section>
             <section>
+                <input type="text" value={input} onChange={onChangeHandler} />
                 <ul>
-                    {list.slice(0, 10).map((post, index) => (
-                        <li key={index}>
-                            {post.title}
-                            <Link href={`/posts/${post.id}`}>
-                                <a>
-                                    <button>Visualizar</button>
-                                </a>
-                            </Link>
-                            {/* <br /> */}
-                            {/* <small className={utilStyles.lightText}> */}
-                            {/*   <Date dateString={date} /> */}
-                            {/* </small> */}
-                            <button onClick={() => apagarRegistro(post.id)}>
-                                Apagar
-                            </button>
-                        </li>
-                    ))}
+                    {list
+                        .slice(0, 10)
+                        .filter(
+                            post => input === "" || post.title.includes(input)
+                        )
+                        .map((post, index) => (
+                            <li key={index}>
+                                {post.title}
+                                <Link href={`/posts/${post.id}`}>
+                                    <a>
+                                        <button>Visualizar</button>
+                                    </a>
+                                </Link>
+                                {/* <br /> */}
+                                {/* <small className={utilStyles.lightText}> */}
+                                {/*   <Date dateString={date} /> */}
+                                {/* </small> */}
+                                <button onClick={() => apagarRegistro(post.id)}>
+                                    Apagar
+                                </button>
+                            </li>
+                        ))}
                 </ul>
             </section>
         </Layout>
