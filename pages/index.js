@@ -1,7 +1,8 @@
 import Head from "next/head"
 import Link from "next/link"
-import Layout from "../components/layout"
 import { useState } from "react"
+import Layout from "../components/layout"
+import utilStyles from "../styles/utils.module.css"
 
 export async function getStaticProps() {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts")
@@ -34,12 +35,14 @@ export default function HomePage({ posts }) {
             <Head>
                 <title>Petz</title>
             </Head>
-            <section>
+            <section className={utilStyles.headingMd}>
                 <p>Procure por título ou por conteúdo do post:</p>
             </section>
-            <section>
+            <section
+                className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}
+            >
                 <input type="text" value={input} onChange={onChangeHandler} />
-                <ul>
+                <ul className={utilStyles.list}>
                     {list
                         .slice(0, 10)
                         .filter(
@@ -49,17 +52,13 @@ export default function HomePage({ posts }) {
                                 post.id == input
                         )
                         .map((post, index) => (
-                            <li key={index}>
+                            <li className={utilStyles.listItem} key={index}>
                                 {post.title}
                                 <Link href={`/posts/${post.id}`}>
                                     <a>
                                         <button>Visualizar</button>
                                     </a>
                                 </Link>
-                                {/* <br /> */}
-                                {/* <small className={utilStyles.lightText}> */}
-                                {/*   <Date dateString={date} /> */}
-                                {/* </small> */}
                                 <button onClick={() => apagarRegistro(post.id)}>
                                     Apagar
                                 </button>
