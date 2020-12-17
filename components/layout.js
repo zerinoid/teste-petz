@@ -4,12 +4,12 @@ import styles from "./layout.module.scss"
 
 export default function Layout({ children, home }) {
     return (
-        <div>
+        <div className={styles.container}>
             <Head>
                 <link rel="icon" href="/icon.png" />
                 <meta name="description" content="Teste petz" />
             </Head>
-            <header>
+            <header className={styles.header}>
                 {home ? (
                     <>
                         <img
@@ -34,7 +34,7 @@ export default function Layout({ children, home }) {
             </header>
             <main>{children}</main>
             {!home && (
-                <div>
+                <div className={styles.backToHome}>
                     <Link href="/">
                         <a>← Back to home</a>
                     </Link>
