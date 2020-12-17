@@ -30,6 +30,7 @@ export default function Post({ post }) {
             </Head>
             <article>
                 <h1>{post.title}</h1>
+                <p> {post.id} </p>
                 {/* <div> */}
                 {/*     <Date dateString={postData.date} /> */}
                 {/* </div> */}
