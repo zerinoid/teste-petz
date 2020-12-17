@@ -1,5 +1,6 @@
 import Head from "next/head"
 import Link from "next/link"
+import styles from "./layout.module.scss"
 
 export default function Layout({ children, home }) {
     return (
@@ -13,7 +14,7 @@ export default function Layout({ children, home }) {
                     <>
                         <img
                             src="/logo.png"
-                            /* className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`} */
+                            className={`${styles.headerHomeImage}`}
                             alt="Petz"
                         />
                     </>
@@ -23,7 +24,7 @@ export default function Layout({ children, home }) {
                             <a>
                                 <img
                                     src="/logo.png"
-                                    /* className={`${styles.headerImage} ${utilStyles.borderCircle}`} */
+                                    className={`${styles.headerImage}`}
                                     alt="Petz"
                                 />
                             </a>
