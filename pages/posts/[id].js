@@ -1,5 +1,6 @@
 import Layout from "../../components/layout"
 import Head from "next/head"
+import utilStyles from "../../styles/utils.module.css"
 
 export async function getStaticPaths() {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts")
@@ -11,14 +12,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    // params contains the post `id`.
-    // If the route is like /posts/1, then params.id is 1
     const res = await fetch(
         `https://jsonplaceholder.typicode.com/posts/${params.id}`
     )
     const post = await res.json()
 
-    // Pass post data to the page via props
     return { props: { post } }
 }
 
@@ -29,11 +27,8 @@ export default function Post({ post }) {
                 <title>{post.title}</title>
             </Head>
             <article>
-                <h1>{post.title}</h1>
-                <p> {post.id} </p>
-                {/* <div> */}
-                {/*     <Date dateString={postData.date} /> */}
-                {/* </div> */}
+                <h1 className={utilStyles.headingXl}>{post.title}</h1>
+                <p className={utilStyles.lightText}> {post.id} </p>
                 <div>{post.body}</div>
             </article>
         </Layout>
