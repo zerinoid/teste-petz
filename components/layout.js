@@ -11,24 +11,22 @@ export default function Layout({ children, home }) {
             <header>
                 {home ? (
                     <>
-                        {/* <img */}
-                        {/*     src="/images/profile.jpg" */}
-                        {/*     className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`} */}
-                        {/*     alt={name} */}
-                        {/* /> */}
-                        imagem aqui
+                        <img
+                            src="/logo.png"
+                            /* className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`} */
+                            alt={name}
+                        />
                         <h1>Petz</h1>
                     </>
                 ) : (
                     <>
                         <Link href="/">
                             <a>
-                                {/* <img */}
-                                {/*     src="/images/profile.jpg" */}
-                                {/*     className={`${styles.headerImage} ${utilStyles.borderCircle}`} */}
-                                {/*     alt={name} */}
-                                {/* /> */}
-                                imagem aqui
+                                <img
+                                    src="/logo.png"
+                                    /* className={`${styles.headerImage} ${utilStyles.borderCircle}`} */
+                                    alt={name}
+                                />
                             </a>
                         </Link>
                         <h2>
