@@ -14,9 +14,8 @@ export default function Layout({ children, home }) {
                         <img
                             src="/logo.png"
                             /* className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`} */
-                            alt={name}
+                            alt="Petz"
                         />
-                        <h1>Petz</h1>
                     </>
                 ) : (
                     <>
@@ -25,15 +24,10 @@ export default function Layout({ children, home }) {
                                 <img
                                     src="/logo.png"
                                     /* className={`${styles.headerImage} ${utilStyles.borderCircle}`} */
-                                    alt={name}
+                                    alt="Petz"
                                 />
                             </a>
                         </Link>
-                        <h2>
-                            <Link href="/">
-                                <a>Petz</a>
-                            </Link>
-                        </h2>
                     </>
                 )}
             </header>
