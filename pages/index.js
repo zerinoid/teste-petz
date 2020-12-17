@@ -39,7 +39,7 @@ export default function HomePage({ posts }) {
                             {post.title}
                             <Link href={`/posts/${post.id}`}>
                                 <a>
-                                    <button>ver</button>
+                                    <button>Visualizar</button>
                                 </a>
                             </Link>
                             {/* <br /> */}
