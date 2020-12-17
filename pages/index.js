@@ -17,8 +17,8 @@ export async function getStaticProps() {
 export default function HomePage({ posts }) {
     const [list, setList] = useState(posts)
 
-    async function apagarRegistro(id) {
-        await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    function apagarRegistro(id) {
+        fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
             method: "DELETE"
         })
         setList(list.filter(item => item.id !== id))
