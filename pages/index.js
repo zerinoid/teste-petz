@@ -3,6 +3,8 @@ import Link from "next/link"
 import { useState } from "react"
 import Layout from "../components/layout"
 import utilStyles from "../styles/utils.module.scss"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTrash, faEye } from "@fortawesome/free-solid-svg-icons"
 
 export async function getStaticProps() {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts")
@@ -56,11 +58,13 @@ export default function HomePage({ posts }) {
                                 {post.title}
                                 <Link href={`/posts/${post.id}`}>
                                     <a>
-                                        <button>Visualizar</button>
+                                        <button>
+                                            <FontAwesomeIcon icon={faEye} />
+                                        </button>
                                     </a>
                                 </Link>
                                 <button onClick={() => apagarRegistro(post.id)}>
-                                    Apagar
+                                    <FontAwesomeIcon icon={faTrash} />
                                 </button>
                             </li>
                         ))}

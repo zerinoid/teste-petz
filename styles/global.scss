@@ -32,5 +32,9 @@ img {
 button {
     background-color: white;
     border: solid 2px $primary;
-    border-radius: 999px;
+    // border-radius: 999px;
+    width: 30px;
+    height: 30px;
+    color: $primary;
+    font: 30px;
 }
