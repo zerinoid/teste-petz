@@ -1,11 +1,11 @@
+import { faEye, faTrash } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Head from "next/head"
 import Link from "next/link"
 import { useState } from "react"
+import Button from "../components/button"
 import Layout from "../components/layout"
 import utilStyles from "../styles/utils.module.scss"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTrash, faEye } from "@fortawesome/free-solid-svg-icons"
-import Button from "../components/button"
 
 export async function getStaticProps() {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts")
