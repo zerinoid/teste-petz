@@ -37,11 +37,11 @@ export default function HomePage({ posts }) {
             </Head>
             <section className={utilStyles.headingMd}>
                 <p>Procure por título ou por conteúdo do post:</p>
+                <input type="text" value={input} onChange={onChangeHandler} />
             </section>
             <section
                 className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}
             >
-                <input type="text" value={input} onChange={onChangeHandler} />
                 <ul className={utilStyles.list}>
                     {list
                         .slice(0, 10)
