@@ -6,7 +6,6 @@ import { useState } from "react"
 import Button from "../components/button"
 import Layout from "../components/layout"
 import utilStyles from "../styles/utils.module.scss"
-import { useMediaQuery } from "react-responsive"
 
 export async function getStaticProps() {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts")
@@ -22,7 +21,7 @@ export async function getStaticProps() {
 export default function HomePage({ posts }) {
     const [list, setList] = useState(posts)
     const [input, setInput] = useState("")
-    const [desktop] = useState(useMediaQuery({ query: "(min-width: 768px)" }))
+    // const [desktop] = useState(useMediaQuery({ query: "(min-width: 768px)" }))
 
     function apagarRegistro(id) {
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
@@ -37,7 +36,7 @@ export default function HomePage({ posts }) {
 
     function stringTrimmer(string) {
         var maxLength = 25
-        if (desktop) maxLength = 60
+        // if (desktop) maxLength = 60
         var trimmedString = string.substr(0, maxLength)
         if (string.length > trimmedString.length) {
             return trimmedString + "..."
