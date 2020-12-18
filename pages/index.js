@@ -63,27 +63,37 @@ export default function HomePage({ posts }) {
                             post =>
                                 input === "" ||
                                 post.title.includes(input) ||
+                                post.body.includes(input) ||
                                 post.id == input
                         )
-                        .map((post, index) => (
-                            <li className={utilStyles.listItem} key={index}>
-                                {stringTrimmer(post.title)}
-                                <div className={utilStyles.buttons}>
-                                    <Link href={`/posts/${post.id}`}>
-                                        <a>
-                                            <button>
-                                                <FontAwesomeIcon icon={faEye} />
-                                            </button>
-                                        </a>
-                                    </Link>
-                                    <button
-                                        onClick={() => apagarRegistro(post.id)}
-                                    >
-                                        <FontAwesomeIcon icon={faTrash} />
-                                    </button>
-                                </div>{" "}
-                            </li>
-                        ))}
+                        .map((post, index) => {
+                            const title =
+                                post.title.charAt(0).toUpperCase() +
+                                post.title.slice(1)
+                            return (
+                                <li className={utilStyles.listItem} key={index}>
+                                    {stringTrimmer(title)}
+                                    <div className={utilStyles.buttons}>
+                                        <Link href={`/posts/${post.id}`}>
+                                            <a>
+                                                <button>
+                                                    <FontAwesomeIcon
+                                                        icon={faEye}
+                                                    />
+                                                </button>
+                                            </a>
+                                        </Link>
+                                        <button
+                                            onClick={() =>
+                                                apagarRegistro(post.id)
+                                            }
+                                        >
+                                            <FontAwesomeIcon icon={faTrash} />
+                                        </button>
+                                    </div>{" "}
+                                </li>
+                            )
+                        })}
                 </ul>
             </section>
         </Layout>
