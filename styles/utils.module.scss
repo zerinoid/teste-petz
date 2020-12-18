@@ -51,3 +51,14 @@
 .lightText {
     color: $text3;
 }
+
+@media(min-width: 768px) {
+    section.yellowBg {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .buttons {
+        min-width: 11.5%;
+    }
+}
