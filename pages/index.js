@@ -45,9 +45,13 @@ export default function HomePage({ posts }) {
             <Head>
                 <title>Petz</title>
             </Head>
-            <section className={utilStyles.headingMd}>
-                <p>Procure por título ou por conteúdo do post:</p>
-                <input type="text" value={input} onChange={onChangeHandler} />
+            <section className={utilStyles.yellowBg}>
+                <input
+                    type="text"
+                    value={input}
+                    onChange={onChangeHandler}
+                    placeholder="Procure por título ou por conteúdo"
+                />
             </section>
             <section
                 className={`${utilStyles.headingMd} ${utilStyles.paddingTop}`}
