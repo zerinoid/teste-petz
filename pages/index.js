@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import utilStyles from "../styles/utils.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrash, faEye } from "@fortawesome/free-solid-svg-icons"
+import Button from "../components/button"
 
 export async function getStaticProps() {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts")
@@ -76,20 +77,20 @@ export default function HomePage({ posts }) {
                                     <div className={utilStyles.buttons}>
                                         <Link href={`/posts/${post.id}`}>
                                             <a>
-                                                <button>
+                                                <Button ver>
                                                     <FontAwesomeIcon
                                                         icon={faEye}
                                                     />
-                                                </button>
+                                                </Button>
                                             </a>
                                         </Link>
-                                        <button
+                                        <Button
                                             onClick={() =>
                                                 apagarRegistro(post.id)
                                             }
                                         >
                                             <FontAwesomeIcon icon={faTrash} />
-                                        </button>
+                                        </Button>
                                     </div>{" "}
                                 </li>
                             )
