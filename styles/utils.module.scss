@@ -1,5 +1,9 @@
 @import "variables";
 
+.yellowBg {
+    background-color: $secondary;
+}
+
 .headingXl {
     font-size: 2rem;
     line-height: 1.3;
