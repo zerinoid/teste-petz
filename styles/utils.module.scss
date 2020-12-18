@@ -28,7 +28,15 @@
 }
 
 .listItem {
+    display: flex;
+    justify-content: space-between;
     margin: 0 0 1.25rem;
+}
+
+.buttons {
+    min-width: 20%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .lightText {

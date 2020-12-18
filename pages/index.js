@@ -33,7 +33,7 @@ export default function HomePage({ posts }) {
     }
 
     function stringTrimmer(string) {
-        var trimmedString = string.substr(0, 50)
+        var trimmedString = string.substr(0, 25)
         if (string.length > trimmedString.length) {
             return trimmedString + "..."
         }
@@ -64,16 +64,20 @@ export default function HomePage({ posts }) {
                         .map((post, index) => (
                             <li className={utilStyles.listItem} key={index}>
                                 {stringTrimmer(post.title)}
-                                <Link href={`/posts/${post.id}`}>
-                                    <a>
-                                        <button>
-                                            <FontAwesomeIcon icon={faEye} />
-                                        </button>
-                                    </a>
-                                </Link>
-                                <button onClick={() => apagarRegistro(post.id)}>
-                                    <FontAwesomeIcon icon={faTrash} />
-                                </button>
+                                <div className={utilStyles.buttons}>
+                                    <Link href={`/posts/${post.id}`}>
+                                        <a>
+                                            <button>
+                                                <FontAwesomeIcon icon={faEye} />
+                                            </button>
+                                        </a>
+                                    </Link>
+                                    <button
+                                        onClick={() => apagarRegistro(post.id)}
+                                    >
+                                        <FontAwesomeIcon icon={faTrash} />
+                                    </button>
+                                </div>{" "}
                             </li>
                         ))}
                 </ul>
