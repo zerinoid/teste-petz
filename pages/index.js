@@ -50,7 +50,7 @@ export default function HomePage({ posts }) {
                 <input type="text" value={input} onChange={onChangeHandler} />
             </section>
             <section
-                className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}
+                className={`${utilStyles.headingMd} ${utilStyles.paddingTop}`}
             >
                 <ul className={utilStyles.list}>
                     {list
