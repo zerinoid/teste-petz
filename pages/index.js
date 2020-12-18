@@ -32,6 +32,14 @@ export default function HomePage({ posts }) {
         setInput(e.target.value)
     }
 
+    function stringTrimmer(string) {
+        var trimmedString = string.substr(0, 50)
+        if (string.length > trimmedString.length) {
+            return trimmedString + "..."
+        }
+        return string
+    }
+
     return (
         <Layout home>
             <Head>
@@ -55,7 +63,7 @@ export default function HomePage({ posts }) {
                         )
                         .map((post, index) => (
                             <li className={utilStyles.listItem} key={index}>
-                                {post.title}
+                                {stringTrimmer(post.title)}
                                 <Link href={`/posts/${post.id}`}>
                                     <a>
                                         <button>
