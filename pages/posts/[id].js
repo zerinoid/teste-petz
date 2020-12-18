@@ -21,15 +21,20 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ post }) {
+    const title = post.title.charAt(0).toUpperCase() + post.title.slice(1)
+    const body = post.body.charAt(0).toUpperCase() + post.body.slice(1)
     return (
         <Layout>
             <Head>
-                <title>{post.title}</title>
+                <title>{title}</title>
             </Head>
             <article>
-                <h1 className={utilStyles.headingXl}>{post.title}</h1>
-                <p className={utilStyles.lightText}> {post.id} </p>
-                <div>{post.body}</div>
+                <h1 className={utilStyles.headingXl}>{title}</h1>
+                <div className={utilStyles.lightText}>
+                    <p>ID do usuário: {post.userId}</p>
+                    <p>Id: {post.id}</p>
+                </div>
+                <div>{body}</div>
             </article>
         </Layout>
     )
