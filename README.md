@@ -15,5 +15,9 @@ O input de busca gera um render automático da lista de posts via **two way bind
 
 Nele é possível buscar pelo titulo do post, pelo corpo (conteúdo) e pelo id do post (porém esta última funcionalidade é omitida do usuário por se mais técnica).
 
+### OBS
+Devido à um bug no **styled-components** tive de criar um config externo para o babel (babel.config.json). Ainda assim o carregamento do component *Button* está atrasado o que causa um impacto no CLS da página.
+Porém decidi manter assim para que o uso da biblioteca se mantenha presente no teste
+
 ## Agradecimento
 Obrigado pela oportunidade, espero que atinja os requisitos mínimos.
